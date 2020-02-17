@@ -4,6 +4,7 @@ const { Router } = require('express');
 const router = Router();
 const routeGuard = require('./../middleware/route-guard');
 const User = require('./../models/user');
+const bcryptjs = require('bcryptjs');
 
 router.get('/:user', routeGuard, (req, res, next) => {
   const user = req.params.user;
