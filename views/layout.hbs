@@ -5,6 +5,18 @@
     <link rel='stylesheet' href='/styles/style.css' />
   </head>
   <body>
+    <nav>
+      <a href="/">Home</a>
+      {{#if user}}
+        <a href='/user/{{user.username}}'>{{ user.username }}'s Profile</a>
+        <a href="/private">Private Page</a>
+        <form action="/autentication/signout" method="POST">
+          <button>Log Out</button>
+        </form>
+      {{else}}
+        <a href="/autentication/signin">Sign In</a>
+        <a href="/autentication/signup">Sign Up</a>
+      {{/if}} </nav>
     {{{body}}}
   </body>
 </html>
